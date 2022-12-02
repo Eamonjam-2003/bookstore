@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1 Add a book
+  if errors
+    each error in errors
+      div.edit 
+      p(style="color:red") #{error.msg}
+
+  form(method="POST", action="/book/edit/" + book._id)
+    #form-group-title.form-group
+      div(for="title") Title: 
+      input#title.input-control(name="title", type="text", value=book.title)
+    #form-group-author.form-group
+       div(for="author") Author:
+       input#author.input-control(name="author", type="text", value=book.author)
+    #form-group-pages.form-group
+       div(for="pages") Pages:
+       input#pages.input-control(name="pages", type="number", value=book.pages)
+    #form-group-rating.form-group
+      div(for="rating") Rating:
+      input#rating.input-control(name="rating", type="number", value=book.rating)
+    #form-group-isbn.form-group
+      div(for="isbn") ISBN:
+      input#isbn.input-control(name="isbn", type="number", value=book.isbn)
+    #form-group-genres.form-group
+      div Genres:
+      each genre in genres 
+        if book.genres.includes(genre)
+           input.input-control(name="genres", type="checkbox", value=genre, checked=true)
+           div #{genre}
+        else
+           input.input-control(name="genres", type="checkbox", value=genre)
+           div #{genre}
+    #form-group-submit.form-group
+      input.btn.btn-primary.input-control(type="submit", value="Submit") 
+    

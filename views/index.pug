@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= title
+  if user
+   p Welcome #{user.name}!
+  else
+   p Welcome to #{title}
+  each book in books 
+    div.bookitem
+      div Title: #{book.title}
+      div Author: #{book.author}
+      div Rating: #{book.rating}/5 
+      div Pages: #{book.pages}
+      div ISBN: #{book.isbn}
+      div Genres:
+        each genre in book.genres
+          div #{genre}
+      if user
+        if user.id == book.posted_by
+          a(href="/book/delete/" + book._id,class='btn btn-danger') Delete
+          a(href="/book/edit/" + book._id,class='btn btn-primary') Edit
+      a(href="/book/" + book._id,class='btn btn-success') Show
+

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1 Login
+
+  if errors
+    each error in errors
+      div.login 
+      p(style="color:red") #{error.msg}
+  form(method="POST", action="/user/login")
+    #form-group-email.form-group
+       div(id= 'email' for="email") Email:
+       input#email.input-control(name="email", type="text")
+    #form-group-password.form-group
+       div(id= 'password' for="password") Password: 
+       input#password.input-control(name="password", type="password")
+    #form-group-submit.form-group
+       input.btn.btn-primary.input-control(type="submit", value="Login")

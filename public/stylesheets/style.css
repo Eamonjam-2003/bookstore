@@ -1,0 +1,50 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: lightgrey;
+}
+
+a {
+  color: green;
+}
+.form-group{
+  margin:5px;
+  padding: 15;
+}
+.bookdisplay{
+  border-style: solid;
+  border-width: 3;
+  padding: 15px;
+  margin:5px;
+  background-color: lightgrey;
+}
+
+.bookitem{
+  border-style: solid;
+  border-width: 3;
+  padding:5px;
+  margin:10px;
+  background-color: lightcoral;
+}
+.add{
+  border-style: solid;
+  border-width: 3;
+  padding:10px;
+  margin:10px;
+  background-color: lightcoral;
+}
+#email, #name, #password, #passwordConfirm {
+  border-style: solid;
+  border-width: 3;
+  padding:10px;
+  margin:10px;
+  background-color: lightgrey;
+}
+
+#title, #author, #pages, #rating, #genre, #isbn {
+  border-style: solid;
+  border-width: 3;
+  padding:10px;
+  margin:10px;
+  background-color: lightcoral; 
+  }

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+    div.bookdisplay
+      div Title: #{book.title}
+      div Rating: #{book.rating}
+      div Pages: #{book.pages}
+      div Author: #{book.author}
+      div Posted By: #{userName}
+      div ISBN: #{book.isbn}
+      div Description: #{desc}
+      div Publisher: #{pub}
+      div Published Date: #{pubDate}
+
+      a.btn.btn-primary(href="/") Home 
+
+    
